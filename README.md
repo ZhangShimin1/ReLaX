@@ -99,6 +99,11 @@ To illustrate ReLaX's generalizability, we further evaluate on model families su
 </div>
 </p>
 
+## Code Availability
+
+The code is currently being adapted to the latest VeRL framework; release is pending.
+
+
 ## Citation
 
 ```bibtex
