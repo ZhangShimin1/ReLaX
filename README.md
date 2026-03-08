@@ -31,13 +31,13 @@ Large Reasoning Models
   <img src="https://img.shields.io/badge/Paper-arXiv%3A2512.07558-b31b1b?style=for-the-badge&logo=arxiv&logoColor=white" />
 </a>
 
-<a href="https://huggingface.co/datasets/REPLACE_WITH_RELAX_DATASET" target="_blank">
-  <img src="https://img.shields.io/badge/Datasets-HuggingFace-ffcc4d?style=for-the-badge&logo=huggingface&logoColor=yellow" />
+<a href="https://huggingface.co/collections/SteveZ25/relax-reasoning-with-latent-exploration" target="_blank">
+  <img src="https://img.shields.io/badge/collections-HuggingFace-ffcc4d?style=for-the-badge&logo=huggingface&logoColor=yellow" />
 </a>
 
-<a href="https://huggingface.co/REPLACE_WITH_RELAX_CHECKPOINTS" target="_blank">
+<!-- <a href="https://huggingface.co/REPLACE_WITH_RELAX_CHECKPOINTS" target="_blank">
   <img src="https://img.shields.io/badge/Checkpoints-HuggingFace-ffcc4d?style=for-the-badge&logo=huggingface&logoColor=yellow" />
-</a>
+</a> -->
 
 </div>
 
@@ -70,9 +70,34 @@ We then incorporate DSD into the policy optimization objective, encouraging the 
 
 
 ## Experimental Results
-Our experiments 
+To demonstrate the effectiveness of ReLaX, we evaluate our method using both large language models (LLMs) and vision–language models (VLMs). The figure below presents the relationship between policy performance and entropy throughout RLVR training. Across both 3B and 7B parameter models, GRPO (with dynamic sampling) tends to suffer from premature convergence as entropy collapses to near zero, causing reward improvements to stagnate. In contrast, ReLaX overcomes this bottleneck—achieving consistently higher rewards while maintaining greater entropy, which indicates sustained and principled exploration during training.
 
----
+<div align="center">
+  <img src="figures/performance_entropy.png" alt="Comparison of policy reward and entropy across RLVR training steps for GRPO (gray) and ReLaX (red); each point represents a specific training step" width="700"/>
+  <div align="center"><em>Policy reward and entropy across RLVR training steps. ReLaX (red) consistently maintains higher entropy and achieves higher rewards versus GRPO (gray), helping avoid premature convergence.</em></div>
+</div>
+</p>
+
+ReLaX demonstrates performance advantage across diverse vision-language benchmarks, consistently outperforming existing state-of-the-art (SOTA) reasoning VLMs at comparable model scales.
+
+<div align="center">
+  <img src="figures/vlm_results.png" alt="VLM benchmark results: ReLaX vs SOTA" width="700"/>
+</div>
+</p>
+
+ReLaX also achieves superior results on text-only mathematical reasoning tasks, outperforming RLVR variants that depend on token-level entropy. This underscores the transformative advantage of harnessing latent space reasoning dynamics for more effective exploration-exloitation tradeoff.
+
+<div align="center">
+  <img src="figures/llm_result_1.png" alt="LLM mathematical reasoning: latent vs token-level exploration" width="700"/>
+</div>
+</p>
+
+To illustrate ReLaX's generalizability, we further evaluate on model families such as Llama3.2 and Qwen3. Results confirm ReLaX's superiority over GRPO baselines.
+
+<div align="center">
+  <img src="figures/llm_result_2.png" alt="Performance on Llama3.2 and Qwen3: ReLaX vs GRPO" width="700"/>
+</div>
+</p>
 
 ## Citation
 
