@@ -35,7 +35,7 @@ Large Reasoning Models
   <img src="https://img.shields.io/badge/Datasets-HuggingFace-ffcc4d?style=for-the-badge&logo=huggingface&logoColor=yellow" />
 </a>
 
-<a href="https://huggingface.co/collections/SteveZ25/relax-models" target="_blank">
+<a href="https://huggingface.co/collections/SteveZ25/relax-checkpoints" target="_blank">
   <img src="https://img.shields.io/badge/Checkpoints-HuggingFace-ffcc4d?style=for-the-badge&logo=huggingface&logoColor=yellow" />
 </a>
 
